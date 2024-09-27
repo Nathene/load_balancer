@@ -25,6 +25,12 @@ This package provides a basic implementation of a load balancer in Go. It uses a
       * `getNextAvailableServer() Server`: Finds the next available server using round-robin.
       * `ServeProxy(w http.ResponseWriter, r *http.Request)`: Handles incoming requests, forwarding them to an available server.
 
+* **`Usage`**
+   * The main reason for using this package is if you have multiple servers
+   * which use redirects to a `master` server. If a server goes down, it will 
+   * still redirect traffic in an organised fashion to the `master` server. 
+
+
 ## Usage Example
 
 ```go

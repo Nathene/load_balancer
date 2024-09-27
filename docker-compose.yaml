@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  load-balancer:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - server1
+      - server2
+
+  server1:
+    image: your-backend-server-image1 
+    ports:
+      - "8080:80"
+
+  server2:
+    image: your-backend-server-image2
+    ports:
+      - "8081:80"
